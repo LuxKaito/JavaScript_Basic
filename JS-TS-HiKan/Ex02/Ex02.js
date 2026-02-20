@@ -31,3 +31,17 @@ console.log("Type of name: " + typeof name);
 console.log("Type of isStudent: " + typeof isStudent);
 console.log("Type of undefinedValue: " + typeof undefinedValue);
 console.log("Type of emptyValue: " + typeof emptyValue);
+
+// object: key-value
+
+const person = {
+    name: "HiKan",
+    age: 22,
+    address: "123 Pham Van Dong Street",
+}
+console.log(person);
+
+// array: mảng
+
+const numbers =[1, 2, 3, 4, 5];
+console.log(numbers);
