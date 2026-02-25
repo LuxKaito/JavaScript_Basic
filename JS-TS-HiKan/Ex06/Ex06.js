@@ -16,3 +16,18 @@ names[3] = "Alicia";
 console.log("Modified array:", names);
 
 console.log("Third name:", names[2]);   
+
+for (let i = 0; i < names.length; i++){
+    console.log(`Name at index ${i}:`, names[i]);
+}
+
+// for-each
+names.forEach(function(value, index){
+    console.log("Value = ", value, "index = ", index);
+})
+
+// for-each arrow function
+
+names.forEach((value, index) => {
+    console.log("Value = ", value, "index = ", index);
+})
