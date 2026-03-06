@@ -37,4 +37,51 @@ saveBtn.addEventListener("click", () => {
 })
 }
 
+const generateTodoTable = () => {
+    const todoListStr = localStorage.getItem("myTodo");
+    if(todoListStr){
+        const todoList = JSON.parse(todoListStr);
+
+    const tbody = document.querySelector('#todoList tbody');
+    
+    if (todoList && todoList.length){
+        todoList.forEach((todo, index) => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>${todo.id}</td>
+                    <td>${todo.name}</td>
+                    <td>
+                    <button 
+                    data-id="${todo.id}" 
+                    class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+}
+}
+
+generateTodoTable();
+
+const deleteBtns = document.querySelectorAll(".btn-delete");
+
+if(deleteBtns){
+    deleteBtns.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            const todoId = btn.getAttribute("data-id");
+            deleteTodo(todoId);
+        });
+    });
+}
+
+const deleteTodo = (id) => {
+    const todoListStr = localStorage.getItem("myTodo");
+    if(todoListStr){
+        const todoList = JSON.parse(todoListStr);
+        const newTodoList = todoList.filter((todo, index) => todo.id + "" !== id);
+        localStorage.setItem("myTodo", JSON.stringify(newTodoList));
+        window.location.reload();
+    }
+}
 
