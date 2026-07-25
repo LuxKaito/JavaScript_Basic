@@ -6,8 +6,10 @@
   "engines": {
     "node": "22.18.0",
     "pnpm": ">=11"
-  }, 
+  },
   "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "node --watch src/app.ts",
     "start": "tsc && node dist/app.js"
   },
   "dependencies": {
