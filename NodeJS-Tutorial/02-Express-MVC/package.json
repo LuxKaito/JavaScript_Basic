@@ -1,0 +1,27 @@
+{
+  "name": "express-typescript-hello-world",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.18.0",
+    "pnpm": ">=11"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "node --watch src/app.ts",
+    "start": "tsc && node dist/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.1"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.1",
+    "typescript": "^7.0.2"
+  }
+}
