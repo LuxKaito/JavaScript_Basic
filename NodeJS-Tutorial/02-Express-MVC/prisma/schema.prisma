@@ -1,0 +1,15 @@
+datasource db {
+  provider = "mysql"
+}
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+model User {
+  id      Int     @id @default(autoincrement()) @db.UnsignedInt
+  name    String  @db.VarChar(100)
+  email   String  @unique @db.VarChar(255)
+  address String? @db.VarChar(255)
+}
